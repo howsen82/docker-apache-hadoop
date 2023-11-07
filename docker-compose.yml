@@ -1,0 +1,15 @@
+version: '3.9'
+
+services:
+  hadoop:
+    container_name: hadoop
+    image: hdfs-namenode
+    ports:
+      - 9000:9000
+      - 2222:22
+      - 50070:50070
+    environment:
+      - HADOOP_CONF_DIR=/etc/hadoop
+      - USER=root
+    volumes:
+      - ./data:/hadoop/data
